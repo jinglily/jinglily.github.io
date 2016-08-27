@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{background: #ccc;}
+		#myCanvas{background: #ccff55;}
+	</style>
+</head>
+<body>
+	<div>
+		<canvas id="myCanvas" width="800" height="500"></canvas>
+	</div>
+<script type="text/javascript">
+	window.onload = function(){
+		function G(sId){
+			return document.getElementById(sId);
+		}
+		var cvs = G('myCanvas');
+		var ctx = cvs.getContext('2d');
+		//线
+		/*var pos1=[
+			{'x' : 100, 'y' : 100},
+			{'x' : 100, 'y' : 300},
+		]*/
+
+		//线
+		/*function draw(octx, pos){
+
+			octx.beginPath();
+
+			octx.moveTo(pos[0].x, pos[0].y);
+		
+			octx.lineTo(pos[1].x, pos[1].y);
+					
+			octx.stroke();
+		
+			octx.closePath();
+
+		}
+		 draw(ctx, pos1);*/
+
+
+
+		 //七巧板
+		 var pos = [
+		 	{'x' : 100, 'y' : 300},
+		 	{'x' : 200, 'y' : 400},
+		 	{'x' : 300, 'y' : 300}
+		 ]
+
+		 var pos1 = [
+			{'x' : 300, 'y' : 300},
+		 	{'x' : 400, 'y' : 400},
+		 	{'x' : 200, 'y' : 400}
+		 ]
+
+		 var pos2 = [
+			{'x' : 300, 'y' : 300},
+		 	{'x' : 350, 'y' : 350},
+		 	{'x' : 400, 'y' : 300}
+		 ]
+
+		 var pos3 = [
+			{'x' : 350, 'y' : 350},
+		 	{'x' : 400, 'y' : 400},
+		 	{'x' : 450, 'y' : 350},
+		 	{'x' : 400, 'y' : 300}
+		 ]
+
+		 var pos4 = [
+			{'x' : 400, 'y' : 300},
+		 	{'x' : 450, 'y' : 350},
+		 	{'x' : 450, 'y' : 300}
+		 ]
+		  var pos5 = [
+			{'x' : 400, 'y' : 300},		 	
+		 	{'x' : 450, 'y' : 300},
+		 	{'x' : 350, 'y' : 200},
+		 	{'x' : 300, 'y' : 200},
+		 ]
+
+		 var pos6 = [
+		 	{'x' : 300, 'y' : 200},
+		 	{'x' : 450, 'y' : 200},
+		 	{'x' : 375, 'y' : 125}
+		 ]
+		 function draw(opos, color){
+		 	ctx.beginPath();
+
+		 	ctx.moveTo(opos[0].x, opos[0].y);
+
+		 	for(var i = 1; i < opos.length; i++){
+
+		 		ctx.lineTo(opos[i].x, opos[i].y);
+		 		console.log(opos[i].x)
+		 		
+		 	} 	
+
+		 	ctx.lineTo(opos[0].x, opos[0].y);
+
+		 	
+
+		 	ctx.fillStyle = color;
+
+		 	ctx.fill();
+
+		 	ctx.closePath();
+
+		 }
+		draw(pos, 'red');
+		draw(pos1, 'pink');
+		draw(pos2, 'blue');
+		draw(pos3, 'yellow');
+		draw(pos4, 'red');
+		draw(pos5, '#fe9435');
+		draw(pos6, '#bb68fd');
+
+}
+		/*ctx.beginPath();
+		ctx.moveTo(100,100);
+		ctx.lineTo(100,300);
+		ctx.lineWidth = 6;
+		ctx.strokeStyle = "pink";
+		ctx.lineCap = "round";
+		ctx.stroke();
+		ctx.closePath();
+
+		ctx.beginPath();
+		ctx.moveTo(100,300);
+		ctx.lineTo(300,100);
+		ctx.lineWidth = 6;
+		ctx.strokeStyle = "pink";
+		ctx.lineCap = "round";
+		ctx.stroke();
+		ctx.closePath();
+
+		ctx.beginPath();
+		ctx.moveTo(300,100);
+		ctx.lineTo(100,100);
+		ctx.lineWidth = 6;
+		ctx.strokeStyle = "pink";
+		ctx.lineCap = "round";
+		ctx.stroke();
+		ctx.closePath();
+	}*/
+</script>
+</body>
+
+</html>
