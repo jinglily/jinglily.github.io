@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+	<script type="text/javascript" src="js/fontsize.js"></script>
+	<script src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+	<style>
+    *{padding: 0;margin: 0;}
+    html{font-size:50px;}
+    @font-face {font-family: 'iconfont';
+    src: url('font/iconfont.eot'); /* IE9*/
+    src: url('font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+
+    #top{
+        width: 100%;
+        height: 1rem;
+        background: #f0f0f0;
+        border-bottom:1px solid #c4c4c4;
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:99;
+        padding: 0;margin: 0;
+        
+    }
+    #top h5{
+        font-family:微软雅黑;
+        font-size:0.34rem;
+        position:fixed;
+        top:0.3rem;
+        left:2.4rem;
+    }
+    #top i{
+        font-family:微软雅黑;
+        font-size:0.42rem;
+        position:fixed;
+    }
+    .top1{
+        top:0.22rem;
+        left:0.43rem;
+    }
+    .top2{
+        top:0.22rem;
+        left:5.4rem;
+    }
+    #nav{
+        margin-top:1rem;
+        height: 0.83rem;
+    }
+	.swiper-container {
+    width: 100%;
+    height: 3.03rem;
+    }  
+	.swiper-pagination-bullet-active{
+	background: #fa7a3b;
+	}
+	.swiper-pagination{
+		text-align:left;
+	}
+    .main1{
+        height: 1.92rem;
+        width: 100%;
+        border-bottom:0.08rem solid #f0efef;
+        padding-left:0.26rem; 
+    }
+    .main1>div{
+        margin-top:0.24rem;
+        position:relative;
+        width: 1.6rem;
+        height: 1.72rem;  
+        float:left;
+    }
+    .main1 .one{
+        width: 0.95rem;
+        height: 0.95rem;
+        border-radius:0.7rem;
+    }
+    .main1 .one i{
+        display:block;
+        width: 0.95rem;
+        height: 0.95rem; 
+        color:#fff;
+        font-size:54px;
+        line-height:0.95rem;
+        text-align:center;
+    }
+    .main1 .one1{
+        background: #f9bc52;
+        border:1px solid #f5c97e;
+
+    }
+    .main1 .one2{
+        background: #fb9191;
+        border:1px solid #f59f9f;
+
+    }
+    .main1 .one3{
+        background: #e092f7;
+        border:1px solid #db90f1;
+
+    }
+    .main1 .one4{
+        background: #f888b4;
+        border:1px solid #f280ad;
+
+    }
+    .main1>div span{
+        display:block;
+        width: 0.95rem;
+        color:#8d8d96;
+        font-family:微软雅黑;
+        font-size:0.22rem;
+        position:absolute;
+        top:1.15rem;
+        text-align:center;
+        
+    }
+    .main2{
+       height: 1.95rem;
+       border-bottom:8px solid #f0efef; 
+    }
+    .main2 div{
+        width: 3.08rem;
+        height: 1.78rem;
+        float:left;
+        margin-left:0.08rem;
+        margin-top:0.08rem;
+    }
+    .main3{
+        height: 3.15rem;
+        background: #f0efef;
+    }
+    .threel{
+        width: 3.04rem;
+        height: 3.04rem;
+        border:1px solid #e9e9e9;
+        position: relative;
+        margin-left:0.08rem;
+        margin-right:0.08rem;
+        background: #fff;
+        float:left;
+    }
+    .threel h1{
+        font-family:微软雅黑;
+        font-size:0.23rem;
+        color:#f9bc52;
+        position:absolute;
+        top:0.14rem;
+        left:0.17rem;
+    }
+    .threel div{
+        width: 2.61rem;
+        height: 1.78rem;
+        position:absolute;
+        top:0.82rem;
+        left:0.17rem;
+    }
+    .threel h2{
+        font-family:微软雅黑;
+        font-size:0.2rem;
+       
+        position:absolute;
+        top:0.5rem;
+        left:0.28rem;
+    }
+    .threel a{
+        text-decoration: none;
+        font-family:微软雅黑;
+        font-size:0.18rem;
+        color:#b0afaf;
+        position:absolute;
+        top:2.72rem;
+        left:1.8rem;
+    }
+    .threer{
+        width: 3.08rem;
+        height: 3.08rem;
+        float:left;
+    }
+    .threer>div{
+        width: 3.06rem;
+        height: 1.46rem;
+        background: #fff;
+        border:1px solid #e9e9e9;
+
+    }
+    .top3{
+        margin-bottom:0.08rem;
+    }
+    .threer>div .shop3{ 
+        width: 1.23rem;
+        height: 1.23rem;
+        margin-top:0.12rem;
+        margin-left:0.08rem;
+        float:left;
+    }
+    .txt3{
+        width: 1.66rem;
+        height: 1.23rem;
+        margin-top:0.12rem;
+        float:left;
+    }
+    .txt1p{
+        color:#fb9191;
+    }
+    .txt2p{
+        color:#d18de5;
+    }
+    .txt3 p{
+         font-family:微软雅黑;
+        font-size:0.2rem;
+        
+        text-align: right;
+        margin-bottom:0.07rem;
+    }
+    
+    .main4{
+        height: 1.46rem;
+        padding: 0.08rem;
+    }
+    .main4>div{
+        width: 6.24rem;
+        height: 1.45rem;
+        
+    }
+    .main5{
+        height: 0.45rem;
+        background: #f0efef;
+        padding-top:0.1rem;
+    }
+    .main5 h3{
+        font-family:微软雅黑;
+        font-size:0.26rem;
+        color:#818181; 
+        margin-left:0.26rem;
+    }
+    .main6{
+        height: 2.74rem;
+        padding: 0.08rem;
+        border-bottom:8px solid #f0efef;
+
+    }
+    .main6 div{
+        width: 6.24rem;
+        height: 2.74rem;
+    }
+    .main7{
+        height: 1.96rem;
+        border-bottom:8px solid #f0efef;
+        
+        position: relative;
+    }
+    .main7>div{
+        width: 1.73rem;
+        height: 1.73rem;
+        border:1px solid #e9e9e9;
+        padding:0.05rem;
+        position: absolute;
+        top:0.06rem;
+        left:0.08rem;
+    }
+    .main7>h4{
+        display:block;
+        width:3.8rem;    
+        font-family:微软雅黑;
+        font-size:0.23rem;
+        color:#686873; 
+        position: absolute;
+        top:0.2rem;
+        left:2.13rem;
+    }
+    .main7>span{
+        font-family:微软雅黑;
+        color:#cdcccc; 
+        position: absolute;
+    }
+    .main7>p{
+        font-family:微软雅黑;
+        font-size:0.26rem;
+        color:#f888b4; 
+        position: absolute;
+        top:1.15rem;
+        left:2.2rem;
+    }
+    .main7 .seven1{
+        font-size:0.14rem;
+        text-decoration:line-through;
+        top:1.23rem;
+        left:3.65rem;
+    }
+    .main7 .seven2{
+        font-size:0.16rem;
+
+        top:1.5rem;
+        left:2.17rem;
+    }
+    .main7>i{
+        font-size:0.6rem;
+        color:#f888b4; 
+        position: absolute;
+        top:1.05rem;
+        left:5.2rem;
+    }
+    .main8{
+        height: 1.06rem;
+    }
+    #footer{
+        height: 0.94rem;
+        width: 100%;
+        background: #5e5d5d;
+        position:fixed;
+        bottom:0;
+        left:0;
+        z-index: 99;
+        border-top:8px solid #fff;
+    }
+    #footer ul{
+        width: 100%;
+        height: 0.94rem;
+    }
+    #footer ul li{
+        display:block;
+        width: 1.28rem;
+        height: 0.94rem;
+        float:left;
+        list-style:none;
+        position: relative;
+
+    }
+
+    .foot{
+        background: #fff
+
+    }
+     .foot i{
+        font-size: 0.36rem;
+        color:#f888b4;
+        position: absolute;
+        top:0.18rem;
+        left:0.44rem;
+    }
+    .foot span{
+        display: block;
+        font-family:微软雅黑;
+        font-size:0.16rem;
+        color:#f888b4; 
+        width: 1.28rem;
+        text-align:center;
+        margin-top:0.62rem;
+    }
+    #footer ul .foots i{
+        font-size: 0.36rem;
+        color:#fff;
+        position: absolute;
+        top:0.18rem;
+        left:0.44rem;
+    }
+   #footer ul .foots span{
+        display: block;
+        font-family:微软雅黑;
+        font-size:0.16rem;
+        color:#fff; 
+        width: 1.28rem;
+        text-align:center;
+        margin-top:0.62rem;
+   }
+	</style>
+</head>
+<body>
+	<div id="top">
+        <i class="iconfont top1">&#xe609;</i>
+        <h5>诚信女装</h5>
+        <i class="iconfont top2">&#xe657;</i>
+    </div>
+	<div id="nav">
+        
+    </div>
+	
+	<div id="banner">
+	<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img width="100%" src="images/banner_02.jpg" alt="" class="pic1"></div>
+        <div class="swiper-slide"><img width="100%" src="images/banner_02.jpg" alt="" class="pic2"></div>
+        <div class="swiper-slide"><img width="100%" src="images/banner_02.jpg" alt="" class="pic3"></div>
+        <div class="swiper-slide"><img width="100%" src="images/banner_02.jpg" alt="" class="pic4"></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- 如果需要导航按钮 -->
+    <!-- <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div> -->
+    
+    <!-- 如果需要滚动条 -->
+    <!-- <div class="swiper-scrollbar"></div> --> 
+</div>
+</div>
+<div id="main">
+    <div class="main1">
+        <div>
+            <div class="one one1"><i class="iconfont">&#xe61c;</i></div><span>二维码</span></div>
+        <div>
+        <div class="one one2"><i class="iconfont">&#xe794;</i></div>     <span>留言</span></div>
+        <div>
+        <div class="one one3"><i class="iconfont">&#xe601;</i></div> <span>购物车</span>
+        </div>
+        <div>
+        <div class="one one4"><i class="iconfont">&#xe60b;</i></div>
+        <span>平台介绍</span></div>
+          
+        
+        
+    </div>
+    <div class="main2">
+        <div><img width="100%" src="images/img_03.jpg" alt=""></div>
+        <div><img width="100%" src="images/img_05.jpg" alt=""></div>
+    </div>
+    <div class="main2">
+        <div><img width="100%" src="images/img_09.jpg" alt=""></div>
+        <div><img width="100%" src="images/img_10.jpg" alt=""></div>
+    </div>
+    <div class="main3">
+        <div class="threel">
+        <h1>推荐商家</h1>
+        <h2>寻找最舒心的诚信卖家！</h2>
+        <div><img width="100%" src="images/one_03.jpg" alt=""></div>
+        <a href="">进入查看更多</a>
+        </div>
+        <div class="threer">
+            <div class="top3">
+                <div class="shop3">
+                    <img width="100%" src="images/shop_05.jpg" alt="">
+                </div>
+                <div class="txt3">
+                    <p class="txt1p">读新闻</p>
+                    <p>了解</p>
+                    <p>最新的</p>
+                    <p>行业资讯</p>
+                </div>
+            </div>
+            <div class="bottom3">
+                <div class="shop3">
+                    <img width="100%" src="images/shop_09.jpg" alt="">
+                </div>
+                <div class="txt3">
+                    <p class="txt2p">懂需求</p>
+                    <p>快速及时</p>
+                    <p>更新</p>
+                    <p>供应与需求</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main4">
+        <div><img width="100%" src="images/shop_12.jpg" alt=""></div>
+    </div>
+    <div class="main5">
+        <h3>畅销热卖新品</h3>
+    </div>
+    <div class="main6">
+        <div><img width="100%" src="images/shop_15.jpg" alt=""></div>
+    </div>
+    <div class="main7">
+        <div><img width="100%" src="images/shop_18.jpg" alt=""></div>
+        <h4>雪纺连衣裙新品女夏装修身蕾丝无袖蝴蝶结少女连衣裙</h4>
+        <p>￥168.00</p>
+        <span class="seven1">￥251.00</span>
+        <span class="seven2">583人购买</span>
+        <i class="iconfont">&#xe601;</i>
+
+    </div>
+    <div class="main7">
+        <div><img width="100%" src="images/shop_18.jpg" alt=""></div>
+        <h4>雪纺连衣裙新品女夏装修身蕾丝无袖蝴蝶结少女连衣裙</h4>
+        <p>￥168.00</p>
+        <span class="seven1">￥251.00</span>
+        <span class="seven2">583人购买</span>
+        <i class="iconfont">&#xe601;</i>
+    </div>
+    <div class="main7">
+        <div><img width="100%" src="images/shop_18.jpg" alt=""></div>
+        <h4>雪纺连衣裙新品女夏装修身蕾丝无袖蝴蝶结少女连衣裙</h4>
+        <p>￥168.00</p>
+        <span class="seven1">￥251.00</span>
+        <span class="seven2">583人购买</span>
+        <i class="iconfont">&#xe601;</i>
+    </div>
+    <div class="main8"></div>
+</div>
+<div id="footer">
+    <ul>
+        <li class="foot">
+            <i class="iconfont">&#xe604;</i>
+            <span>首页</span>
+        </li>
+        <li class="foots">
+            <i class="iconfont">&#xe640;</i>
+            <span>产品分类</span>
+        </li>
+        <li class="foots">
+            <i class="iconfont">&#xe624;</i>
+            <span>商铺中心</span>
+        </li>
+        <li class="foots">
+            <i class="iconfont">&#xe666;</i>
+            <span>行业新闻</span>
+        </li>
+        <li class="foots">
+            <i class="iconfont">&#xe611;</i>
+            <span>用户中心</span>
+        </li>
+    </ul>
+</div>
+<script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+    
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+    
+    // 如果需要前进后退按钮
+   /* nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',*/
+    
+    // 如果需要滚动条
+    /*scrollbar: '.swiper-scrollbar',*/
+  })        
+  </script>
+</body>
+</html>

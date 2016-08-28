@@ -2,9 +2,237 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
 	<title>Document</title>
+    <link rel="stylesheet" href="css/animated.css">
+	<style>
+    *{
+       padding: 0;
+        margin: 0;
+    }
+     html,body{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position:relative;
+     }
+	
+     body{
+     	background: #ccee55;
+     }
+     .music-btn{
+      display:block;
+      width:44px;
+      height:44px;
+      background: url(images/music.png),no-repeat;
+      position:fixed;
+      right:10px;
+      top:10px;
+      z-index:100;	
+     }
+     .hide{display:none;}
+      .arrow{
+        width:20%;
+        position:fixed;
+        left:40%;
+        bottom:5px;
+        z-index:100;
+      }
+      
+      /* .box{
+        width: 150px;
+        height: 150px;background:#ffbb66;
+      }
+      .box1{
+         width: 150px;
+        height: 150px;background:#bb55cc;
+      }
+      .box2{
+        width: 150px;
+        height: 150px;background:#55bbcc;
+      } */
+    .pic{
+        display:block;
+        width:36%;
+        margin:0 auto;
+        margin-top:100px;
+        border-radius:50%;
+    }
+    .page1 p{
+        text-align:center;
+        font-size:18px;
+        font-family:微软雅黑;
+        color:#fff;
+        margin-top:20px;
+    }
+    .page{
+      overflow:hidden;
+      width: 100%;
+      height: 100%;
+      z-index:99;
+      position:absolute;
+      left:0;
+      top:0;
+      transition:all 0.3s linear;
+      -webkit-transition:all 0.3s linear;
+    }
+    .page2{
+       background: #fccd55; 
+       
+     }
+    .page2 h2{
+        color:#fff;
+        margin-left:30px;
+        margin-top:50px;      
+    }
+    .page2 p{
+        text-align:left;
+        font-size:20px;
+        font-family:微软雅黑;
+        color:#fff;
+        margin-left:20%;
+        margin-top:20px;
+    }
+    .page3{
+      background-color: red;
+      padding-top:150px;
+    }
+    .page3 p{
+      text-align:left;
+        font-size:20px;
+        font-family:微软雅黑;
+        color:#fff;
+        margin-top:40px;
+        margin-left:50px;       
+    }
+    .page4{
+      background: blue;
+    }
+    .page5{
+      background: yellow;
+    }
+    .pageDown{
+      transform:translate(0,100%);
+      -webkit-transform:translate(0,100%);
+    }
+    .pageUp{
+      transform:translate(0,-100%);
+      -webkit-transform:translate(0,-100%);
+    }
+	</style>
 </head>
 <body>
-	<h1>hellow world</h1>
+	<span class="music-btn music-on"></span>
+    <span class="arrow animated infinite">
+        <img width="100%" src="images/arrow.png" alt="">
+    </span>
+   <!--  <div class="box fadeInLeft"></div>
+   <div class="box1 fadeInRight"></div>
+   <div class="box2 fadeInBottom"></div> -->
+   <div class="main">
+ <div class="page page1">
+          <span ><img class="pic fadeInLeft" width="100%" src="images/7fac8383gw1f5k3bejd9yj21kw19igxz.jpg" alt=""></span>
+          <p class="box fadeInBottom delay-time1">
+              <span>姓名：</span>
+              <span>张静利</span> </p>
+          <p class="box fadeInBottom delay-time2"> 
+              <span>性别：</span>
+              <span>女</span> 
+          </p>
+          <p class="box fadeInBottom delay-time3">
+              <span>出生年月：</span>
+              <span>199501</span>
+          </p>
+          <p class="box fadeInBottom delay-time4">
+              <span>联系方式：</span>
+              <span>12345678910</span>
+          </p>
+      </div>   
+    <div class="page page2 pageDown">
+           <h2 class="box hide fadeInRight delay-time1">求职意向</h2>
+           <p class="box hide fadeInLeft delay-time3">Web前端工程师</p>
+           <h2 class="box hide fadeInRight delay-time2">职业技能</h2>
+           <p class="box hide fadeInLeft delay-time4">1·HTML&HTML5</p>
+           <p class="box hide fadeInLeft delay-time4">2·CSS3</p>
+           <p class="box hide fadeInLeft delay-time4">3·JQuery</p>
+           <p class="box hide fadeInLeft delay-time4">4·JavaScript</p>
+      </div>  
+
+      <div class="page page3 pageDown">
+           <p class="box hide fadeInBotton delay-time3">学历：大专</p>
+           <p class="box hide fadeInRight delay-time3">毕业学校：河北科技师范学院</p>
+           <p class="box hide fadeInLeft delay-time3">学院：数学与信息科技学院</p>
+           <p class="box hide fadeInBottom delay-time4">专业：图形图像制作</p>
+      </div>
+      <div class="page page4 pageDown">4</div>
+      <div class="page page5 pageDown">5</div>
+   </div>
+   <audio src="music/renyimen.m4a" id="music" autoplay></audio>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/touch-0.2.14.min.js"></script>
+	<script> 
+	$(function(){
+		var swipeBtn=false
+		/*$('.music-btn').on('tap',function(){*/
+			/*$(this).toggleClass('music-on');*/
+
+        /*if(swipeBtn==false){
+        	$(this).addClass('music-on');
+        	swipeBtn=true;
+
+        }
+        else{
+        	$(this).removeClass('music-on');
+        	swipeBtn=false;
+        }
+	})
+*/
+    var MUSIC=document.getElementById('music');
+   touch.on('.music-btn','tap',function(e){
+   	if(swipeBtn==true){
+        	$('.music-btn').removeClass('music-on');
+        	swipeBtn=false;
+          MUSIC.pause();
+        }
+        else{
+        	$('.music-btn').addClass('music-on');
+          MUSIC.play();
+        	swipeBtn=true;
+        }
+   })
+   var curindex=0;
+   var pageNum=('.page').length-1;
+   touch.on('.main','swipeup',function(e){ 
+    if(curindex < pageNum){
+    $('.page').eq(curindex).addClass('pageUp');
+    curindex=curindex+1;
+    $('.page').eq(curindex).removeClass('pageDown'); 
+    $('.page').eq(curindex).find('.hide').removeClass('hide');
+    $('.page').eq(curindex).siblings().find('.box').addClass('hide');
+     }else{
+  return false;
+ }
+ if(curindex==pageNum){
+  $('.arrow').hide();
+ }
+ })
+  touch.on('.main','swipedown',function(e){ 
+    $('.arrow').show();
+    if(curindex >0){
+    $('.page').eq(curindex).addClass('pageDown');
+    curindex=curindex-1;
+    $('.page').eq(curindex).removeClass('pageUp'); 
+  $('.page').eq(curindex).find('.hide').removeClass('hide');
+    $('.page').eq(curindex).siblings().find('.box').addClass('hide');}
+   })
+
+  /* $('.arrow').click(function(){
+    $('.page1').hide();
+    $('.page2').show();
+   })*/
+
+})
+	</script>
 </body>
+
 </html>
