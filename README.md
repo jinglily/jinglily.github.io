@@ -1,2 +1,2 @@
 # jinglily.github.io
-this is my 
+this is my homepage
